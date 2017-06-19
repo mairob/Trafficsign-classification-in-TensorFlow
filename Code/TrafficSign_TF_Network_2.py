@@ -27,7 +27,6 @@ def max_pool_2x2(x):
 
 						
 #Note:  tf.name_scope is used for structuring the graph
-#Note: dropout should be around 35...50%
 #Note: learningrate should be around 1e-4....1e-6
 #Note: Network is taken from https://www.tensorflow.org/get_started/mnist/pros
 with tf.name_scope('Network'):
