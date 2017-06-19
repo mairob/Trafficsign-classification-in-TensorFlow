@@ -14,4 +14,4 @@ Hi guys! My name Robert. I'm currently a student at OTH Regensburg. Due to a 2 m
 <> skimage and OpenCV for python 3.5.x
 
 ### Note
-The .ipynb-notebook has some images included which sum up to a total of ~7MB
+The .ipynb-notebook has some images and gifs included which sum up to a total of ~18MB
