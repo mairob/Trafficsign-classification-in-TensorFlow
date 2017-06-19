@@ -29,7 +29,7 @@ test_path_folder = r'C:\Users\.....\TestFolder'
 
 
 
-def normailzeImages(lst_images):
+def normalizeImages(lst_images):
 	"""
     Preprocessing images by normalizing
     """
@@ -56,7 +56,7 @@ def loadDataSet(csv_path, images_rootpath):
 		labels += row
 	gtFile.close()
 
-	return normailzeImages(images), list(map(int, labels))	
+	return normalizeImages(images), list(map(int, labels))	
 
 	
 def convertToUINT8(x):
