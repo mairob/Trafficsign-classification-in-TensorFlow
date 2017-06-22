@@ -1,6 +1,9 @@
 import numpy as np
 import tensorflow as tf
 
+
+#Note: this one should give you around 99.1% on an augumented GTSRB
+
 image_size = 48  #width = height
 col_channels = 3 	#RGB
 
