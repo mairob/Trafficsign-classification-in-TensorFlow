@@ -8,6 +8,7 @@ import numpy as np
 #Warning: NO RESIZING IS DONE HERE. If you want to do that, I encourage you to do it
 #		  right before saving the enhanced trng-set with something like: cv2.resize(img, (48,48))
 
+#Note: Code may containg slight errors
 #Note: Baisc functions for loading the original GTSRB
 #Note: Functions for augumenting the data
 #Note: Functions for making the aug. data easier accessible
@@ -71,7 +72,46 @@ def enhance_and_save_trng(csv_path, images_path, saving_path):
 	    wr = csv.writer(f,delimiter="\n")
 	    wr.writerow(enh_labels)
 
+		
+def splitTrainingset(aug_images, aug_labels):
+	"""
+	Splits augumented trainingset into an equalized set with 200 images per class
+	and a therefore reduced set with original distribution of images over all classes.
+	
+	#Note: You can combine this with the saving function above
+	#Note: aug_images and aug_labels remain but are shortend -> print(len(aug_images))
 
+    	"""
+	eq_images = []
+	eq_labels = []
+
+	lower_bound = 0
+	upper_bound = len(aug_images)
+
+	#assumtion: class indizes are sorted and increasing
+	for classindex in range(43):
+		for position in range(lower_bound, upper_bound):
+			if aug_labels[position] != classindex:
+				upper_bound	= position
+				break
+		sample_index= random.sample(range(lower_bound, upper_bound), 200)  
+
+		for i in sample_index:
+			eq_images.append(aug_images[i][:])
+
+		for i in sample_index:
+			eq_labels.append(aug_labels[i])
+
+		cnt = 0
+		for i in sample_index:
+			aug_images.pop(i - cnt)
+			aug_labels.pop(i - cnt)
+			cnt +=1
+
+			lower_bound = upper_bound
+		upper_bound = len(aug_images)
+
+		
 
 def readTrafficSigns(rootpath):
 	"""
