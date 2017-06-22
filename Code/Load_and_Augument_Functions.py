@@ -144,7 +144,7 @@ def readLabels(pathToCSV):
 
 def random_brightness(image, ratio):
 	"""
-    Add random brightness. ratio should be around
+    Add random brightness. ratio should be around 70
     """
     hsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
     brightness = np.float64(hsv[:, :, 2])
@@ -156,7 +156,7 @@ def random_brightness(image, ratio):
 
 def random_rotation(image, angle):
 	"""
-    Add random rotation. angle should be around
+    Add random rotation. angle should be around 10
     """
 
     if angle == 0:
@@ -172,7 +172,7 @@ def random_rotation(image, angle):
 
 def random_translation(image, translation):
 	"""
-    Add random translation. tranlation should be around
+    Add random translation. tranlation should be around 2
     """
     if translation == 0:
         return 0
@@ -186,7 +186,7 @@ def random_translation(image, translation):
 
 def random_shear(image, shear):
 	"""
-    Add random shear. shear should be around
+    Add random shear. shear should be around 5
     """
     if shear == 0:
         return image
