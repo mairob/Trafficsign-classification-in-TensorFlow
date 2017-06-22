@@ -5,8 +5,8 @@ import numpy as np
 
 
 
-#Warning: NO RESIZING IS DONE HERE. If you want to do that, I encourage you to do it
-#		  right before saving the enhanced trng-set with something like: cv2.resize(img, (48,48))
+#Warning: RESIZING IS DONE HERE. If you don't want that, I encourage you to remove the resizing part
+#		  right before saving the enhanced trng-set (cv2.resize(img, (48,48)))
 
 #Note: Code may containg slight errors
 #Note: Baisc functions for loading the original GTSRB
