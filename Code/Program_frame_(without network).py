@@ -210,6 +210,8 @@ with tf.Session() as sess:
 	
 	
 	print(">>>> Load equalized training set")
+	#Note: If you have done the preprocessing -> see the corresponding file
+	#	Most of the time you don't need to run the "equalized" training
 	equ_images, equ_labels = loadDataSet(equ_path_file, equ_path_folder)
 
 	
